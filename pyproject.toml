@@ -1,0 +1,14 @@
+[project]
+name = "jrdb_social"
+version = "0.0.1"
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "tensorneko==0.3.14",
+    # "torch", 
+    "torchmetrics==1.2.*"
+]
+
+[project.scripts]
+jrdb_social = "jrdb_social.__main__:main"
