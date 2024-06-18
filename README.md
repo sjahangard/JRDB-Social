@@ -12,8 +12,8 @@ pip install git+https://github.com/sjahangard/JRDB-Social.git
 jrdb_social crop <LEVEL> --data_root <DATA_ROOT> --split <SPLIT>
 ```
 
-`LEVEL`: `person`, `group`, `interaction`, `holistic`, `all`
-`SPLIT`: `train`, `valid`, `test`
+- `LEVEL`: `person`, `group`, `interaction`, `holistic`, `all`
+- `SPLIT`: `train`, `valid`, `test`
 
 Then the processed data and labels will be saved in `DATA_ROOT/cropped/<LEVEL>`
 
