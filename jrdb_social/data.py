@@ -315,7 +315,7 @@ class JRDBSocialInteractions(JRDBSocial):
     def _getitem_train(self, index):
         video_name, file, datum = self.interaction_labels[index]
 
-        video_path = f"{self.data_root}/interactions/{video_name}/{file}"
+        video_path = f"{self.data_root}/cropped/interactions/{video_name}/{file}"
         # assert os.path.exists(video_path), video_path
         interaction_label = datum["interaction"]
 

@@ -48,6 +48,37 @@ if __name__ == '__main__':
         print(each)
 ```
 
+## Baselines
+
+### MiniGPT-4
+
+#### Getting Started
+
+```bash
+conda create -n minigpt4 python=3.10
+conda activate minigpt4
+conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install huggingface-hub==0.18.0 matplotlib==3.7.0 psutil==5.9.4 iopath pyyaml regex tokenizers==0.13.2 tqdm transformers==4.30.0 timm==0.6.13 webdataset==0.2.48 omegaconf==2.3.0 opencv-python==4.7.0.72 decord==0.6.0 peft==0.2.0 sentence-transformers gradio==3.47.1 accelerate==0.20.3 bitsandbytes wandb
+pip install git+https://github.com/sjahangard/JRDB-Social.git
+```
+
+Then you need to download `minigptv2_checkpoint.pth` from the [original repository](https://github.com/Vision-CAIR/MiniGPT-4) and put it in the `baselines/MiniGPT-4` directory.
+
+#### Evaluation
+
+Evaluate for `person`, `group`, `interaction` levels.
+```bash
+python infer_jrdb_social.py --data_root <DATA_ROOT> --type <LEVEL> --max_trials <ENSEMBLE> --split <SPLIT> --llama_path <PATH/TO/llama-2-7b-chat-hf>
+```
+
+Evaluate for `holistic` level.
+```bash
+# counting
+python infer_jrdb_social_for_holistic.py --data_root <DATA_ROOT> --max_trials <ENSEMBLE> --split <SPLIT> --llama_path <PATH/TO/llama-2-7b-chat-hf>
+# binary
+python infer_jrdb_social_for_holistic_category.py --data_root <DATA_ROOT> --max_trials <ENSEMBLE> --split <SPLIT> --llama_path <PATH/TO/llama-2-7b-chat-hf>
+```
+
 ## Reference
 
 ```bibtex

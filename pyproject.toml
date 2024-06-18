@@ -12,3 +12,6 @@ dependencies = [
 
 [project.scripts]
 jrdb_social = "jrdb_social.__main__:main"
+
+[tool.setuptools]
+py-modules = ["jrdb_social"]

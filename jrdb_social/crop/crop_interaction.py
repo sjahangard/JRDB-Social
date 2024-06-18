@@ -10,8 +10,6 @@ from tqdm.auto import tqdm
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
-from traitlets import Int
-
 
 from ..data import train_seqs, valid_seqs, test_seqs
 
